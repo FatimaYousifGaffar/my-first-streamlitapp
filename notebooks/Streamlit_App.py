@@ -3,11 +3,13 @@ import json
 import plotly.graph_objects as go
 import pandas as pd
 import plotly.express as px
+
+st.title("Clean energy in Switzerland")
 # Data from: https://data.open-power-system-data.org/renewable_power_plants/
-clean_energy_ch = pd.read_csv(r"C:\Users\tonay\Desktop\constructor\fatima-yousif-gaffar\03_Visualization\day3\data\renewable_power_plants_CH.csv")
+clean_energy_ch = pd.read_csv(r"data\raw\renewable_power_plants_CH.csv")
 clean_energy_ch.head()
 clean_energy_ch.info()
-with open(r"C:\Users\tonay\Desktop\constructor\fatima-yousif-gaffar\03_Visualization\day3\data\georef-switzerland-kanton.geojson") as response:
+with open(r"data\raw\georef-switzerland-kanton.geojson") as response:
     cantons = json.load(response)
 
 cantons["features"][0]["properties"]
@@ -50,7 +52,8 @@ fig.update_layout(margin={"r":0,"t":35,"l":0,"b":0},
                  )
 fig.show()
 st.set_page_config(
-    page_title="Clean_Energy",
+    page_title="Clean energy in Switzerland",
     page_icon="📊",
     layout="wide"
 )
+null= 0
