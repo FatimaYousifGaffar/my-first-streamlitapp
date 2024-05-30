@@ -4,6 +4,7 @@ import plotly.graph_objects as go
 import pandas as pd
 import plotly.express as px
 
+
 st.title("Clean energy in Switzerland")
 # Data from: https://data.open-power-system-data.org/renewable_power_plants/
 clean_energy_ch = pd.read_csv(r"data\raw\renewable_power_plants_CH.csv")
@@ -51,9 +52,3 @@ fig.update_layout(margin={"r":0,"t":35,"l":0,"b":0},
                         "yanchor":"bottom", "y":0.95}
                  )
 fig.show()
-st.set_page_config(
-    page_title="Clean energy in Switzerland",
-    page_icon="📊",
-    layout="wide"
-)
-null= 0
